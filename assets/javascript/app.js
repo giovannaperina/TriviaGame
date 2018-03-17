@@ -1,5 +1,3 @@
-/* global jQuery */ /* <-- isso é só pro Cloud9 parar de encher o saco */
-
 jQuery(document).ready(function($) {
     
      /* GIFS */
@@ -114,40 +112,40 @@ jQuery(document).ready(function($) {
     }
     
     function checkAnswer(answer) {
-        timerInterval = clearInterval(timerInterval); // Parar o Timer
-        var correctAnswerIndex = triviaQuestion[currentQuestion].correctAnswer; // pego o index da resposta correta
-        var correctAnswerText  = triviaQuestion[currentQuestion].answersList[correctAnswerIndex]; // usando o index, eu pego o TEXTO da resposta correta
+        timerInterval = clearInterval(timerInterval); 
+        var correctAnswerIndex = triviaQuestion[currentQuestion].correctAnswer; 
+        var correctAnswerText  = triviaQuestion[currentQuestion].answersList[correctAnswerIndex]; 
         
-        if(answer == 'TIMEOUT') { // Se a resposta for TIMEOUT (que vem da linha 111, caso o tempo acabe)
+        if(answer == 'TIMEOUT') { 
             $('#answerMessage').text('Timeout!'); 
-            var gif = timeoutGif[Math.floor(Math.random()*timeoutGif.length)]; // pego um Gif Randomico do Array de Timeout Gifs
-            $('#gif').attr('src', `assets/images/gifs/${gif}.gif`); // defino o SRC da imagem #gif
-            $('#correctAnswer').html(''); // Limpo o texto de Correct Answer porque Timeout não da a resposta correta
+            var gif = timeoutGif[Math.floor(Math.random()*timeoutGif.length)]; 
+            $('#gif').attr('src', `assets/images/gifs/${gif}.gif`); 
+            $('#correctAnswer').html('');
             
-            timeoutAnswers++; // adiciono +1 a pontuação de Timeout
+            timeoutAnswers++; 
             
-        } else if(answer == correctAnswerText) { // Se a resposta passada for IGUAL a resposta correta
+        } else if(answer == correctAnswerText) { 
             $('#answerMessage').text('Correct!');
-            var gif = correctGif[Math.floor(Math.random()*correctGif.length)]; // pego um Gif Randomico do Array de Correct Gifs
-            $('#gif').attr('src', `assets/images/gifs/${gif}.gif`); // defino o SRC da imagem #gif
-            $('#correctAnswer').html(''); // Limpo o texto de Correct Answer porque Correct não da a resposta correta
+            var gif = correctGif[Math.floor(Math.random()*correctGif.length)]; 
+            $('#gif').attr('src', `assets/images/gifs/${gif}.gif`); 
+            $('#correctAnswer').html(''); 
             
-            rightAnswers++; // adiciono +1 a pontuação de Right Answers
+            rightAnswers++; 
             
-        } else { // Se não.. a resposta está incorreta...
+        } else { 
             $('#answerMessage').text('Wrong...');
-            var gif = incorrectGif[Math.floor(Math.random()*incorrectGif.length)]; // pego um Gif Randomico do Array de Incorrect Gifs
-            $('#gif').attr('src', `assets/images/gifs/${gif}.gif`); // defino o SRC da imagem #gif
-            $('#correctAnswer').html(`The correct answer is: <strong>${correctAnswerText}</strong>`); // Mostro a resposta correta
+            var gif = incorrectGif[Math.floor(Math.random()*incorrectGif.length)]; 
+            $('#gif').attr('src', `assets/images/gifs/${gif}.gif`); 
+            $('#correctAnswer').html(`The correct answer is: <strong>${correctAnswerText}</strong>`); 
             
-            wrongAnswers++; // adiciono +1 a pontuação de Wrong Answers
+            wrongAnswers++; 
         }
         
-        // Depois de checar se está correto ou não.. mando o usuário para a tela aonde tem o Gif
+        
         changeScreen('answer-screen');
         
-        setTimeout(function() { // Depois de 4 segundos, eu sumo com a tela do GIF
-            currentQuestion++; // adiciono +1 ao currentQuestion, que faz com que mudamos para a PROXIMA PERGUNTA
+        setTimeout(function() { 
+            currentQuestion++; 
             
             $('#answerMessage').text(''); // clean answerMessage
             $('#gif').attr('src', '');    // clean Gif
@@ -166,8 +164,7 @@ jQuery(document).ready(function($) {
     }
     
     function scoreScreen() {
-        changeScreen('score-screen'); // mudo a tela para Score Screen
-        // alimento os spans com as pontuações de corretas, incorretas e timeout
+        changeScreen('score-screen');
         $('#scoreCorrect').text(rightAnswers);
         $('#scoreIncorrect').text(wrongAnswers);
         $('#scoreTimeout').text(timeoutAnswers);
@@ -176,13 +173,13 @@ jQuery(document).ready(function($) {
     
     /* BUTTON EVENTS */
     
-    // Ao clicar em alguma Resposta:
+   
     $('body').on('click', '.answer-item', function() {
-        var answer = $(this).text(); // Pego o texto da resposta Clicada
-        checkAnswer(answer); // Mando o texto para a função checkAnswer
+        var answer = $(this).text(); 
+        checkAnswer(answer); 
     });
     
-    // ao clicar no botão Start ou Restart, chama a função Start Game
+    
     $('#startBtn, #restartBtn').click(function() {
        startGame(); 
     });
