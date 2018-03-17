@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    
+    <title> Trivia Game </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Francois+One|Lora" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css"  href="assets/css/style.css" />
+</head>
+
+<body>
+    
+    <div class="background"></div>
+    
+    
+    <div class= "container">
+        <h1> Trivia Game</h1>
+        <section class="screen" id="start-screen">
+            <div class="title"></div>
+            <div class"buttonHolder">
+                <button id="startBtn" type="button"> Start</button>
+            </div>
+        </section>
+            
+        <section class="screen" id="question-screen">
+            <div id="currentQuestion"></div>
+            <div class="timerHolder">
+                <span id="timer"></span>
+            </div>
+            <div id="questionText"></div>
+            <div class="allAnswers row">
+                <div class="col-xs-6 col-xs-offset-3">
+                    <div class="list-group" id="answersList">
+                        <button class="list-group-item answer-item"></button>
+                    </div>
+                </div>
+            </div>
+            
+        </section>
+        
+        <section class="screen" id="answer-screen">
+            <div id="answerMessage"></div>
+            <img id="gif"/>
+            <div id="correctAnswer"></div>
+            
+        </section>
+        <section class="screen" id="score-screen">
+            <div class="scoreboard">
+                <ul>
+                    <li> Correct Answers: <span id="scoreCorrect"></span> </li>
+                    <li> Incorrect Answers: <span id="scoreIncorrect"></span></li>
+                    <li>Unanswered: <span id="scoreTimeout"></span></li>
+                </ul>
+            </div>
+            <div class="restartbutton">
+                <button id="restartBtn">Restart</button>
+            </div>
+        </section>
+    </div>
+   
+   <footer>
+        <p class="copy"> &copy; Copyright 2018 Giovanna Perina- Trivia Game</p>
+   </footer> 
+    
+    
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="assets/javascript/app.js"></script>
+</body>
+</html>
