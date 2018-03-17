@@ -41,6 +41,17 @@ body {
     padding-top: 30px;
     text-shadow: 3px 3px 2px rgba(0,0,0,0.2);
 }
+.sound-icon {
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    cursor: pointer;
+    padding: 5px;
+  }
+  
+.sound-icon:hover {
+    transform: scale(1.1);
+  }
 
 #startBtn {
     margin-top: 150px;

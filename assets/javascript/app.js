@@ -189,3 +189,15 @@ jQuery(document).ready(function($) {
     changeScreen('start-screen');
     // startGame();
 });
+
+    //  Background Sound
+    var sound = document.getElementById("sound1"); 
+    function btn(){
+        if (sound.paused !==true){
+            sound.pause();
+        }else {
+            sound.play();
+        }
+    }
+    
+

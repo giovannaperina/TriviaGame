@@ -5,6 +5,8 @@
     
     <title> Trivia Game </title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <audio id='sound1'loop autoplay="autoplay"><source src="background.mp3" type="audio/mpeg"/></audio>
+
     <link href="https://fonts.googleapis.com/css?family=Francois+One|Lora" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css"  href="assets/css/style.css" />
@@ -13,9 +15,13 @@
 <body>
     
     <div class="background"></div>
-    
+
+        <div class="sound-icon">
+                <img onclick="btn()" src="assets/images/sound-icon.png" width="40px">
+        </div>
     
     <div class= "container">
+        
         <h1> Trivia Game</h1>
         <section class="screen" id="start-screen">
             <div class="title"></div>
