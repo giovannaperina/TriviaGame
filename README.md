@@ -8,7 +8,8 @@ The Trivia Game is using JavaScript for the logic and jQuery to manipulate HTML.
 ---
 
 ### Game 
-If the player selects the correct answer, Trivia Game shows a gif congratulating for choosing the right option. Similar for wrong and time-outs.
+- If the player selects the correct answer, Trivia Game shows a gif congratulating for choosing the right option. Similar for wrong and time-outs.
+
 <img src="assets/images/game.gif" width="500px" height="350px">
 
 ---
